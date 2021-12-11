@@ -1,5 +1,7 @@
 player.on('error', (queue, error) => {
     console.log(`Error emitted from the queue ${error.message}`);
+    queue.skip();
+    queue.setPaused(false);
 });
 
 player.on('connectionError', (queue, error) => {
